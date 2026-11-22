@@ -1,0 +1,47 @@
+# react_fast_api/app.yaml
+# Deploy with: databricks apps deploy finops-copilot-v1 --source-code-path /Workspace/Users/your_email@example.com/Hoonartek/FinOps_CoPilot_V1/codebase
+
+# command must be a YAML sequence (list), NOT a string
+command: ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8080"]
+
+env:
+  - name: DATABRICKS_HOST
+    value: ""
+
+  - name: DATABRICKS_WAREHOUSE_ID
+    value: ""
+
+  - name: DATABRICKS_CATALOG
+    value: "system"
+
+  - name: NOTEBOOK_NAME
+    value: "FinOps DBX Developer Notebook"
+
+  - name: NOTEBOOK_BTN_LABEL
+    value: "Open Developer Notebook"
+
+  - name: NOTEBOOK_ID
+    value: "1561959874304159"
+
+  - name: NOTEBOOK_WORKSPACE_PATH
+    value: "/Workspace/Users/user_email/Hoonartek/FinOps_Databricks_FullDemo_v5-5"
+
+  - name: DEFAULT_THEME
+    value: "dark"
+
+  - name: DATABRICKS_CACHE_TTL
+    value: "7200"
+
+  - name: DATABRICKS_POOL_SIZE
+    value: "5"
+
+  - name: CORS_ORIGINS
+    value: ""  # Leave blank in Databricks Apps; FastAPI serves the React build itself
+
+  # Secrets are referenced via valueFrom, pointing to the secret key name
+  # defined in the app's resource configuration (databricks.yml or App UI)
+  - name: ANTHROPIC_API_KEY
+    valueFrom: "ANTHROPIC_API_KEY"
+
+  - name: GEMINI_API_KEY
+    valueFrom: "GEMINI_API_KEY"

@@ -1,0 +1,28 @@
+# Environment & Secrets (NEVER commit secrets to Git)
+.env
+.env.local
+.env.*.local
+
+# Node.js dependencies & cache (DO NOT commit node_modules)
+frontend/node_modules/
+node_modules/
+.npm/
+.yarn/
+
+# Python Virtual Environments & Bytecode
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*.class
+*.pyd
+
+# Databricks CLI local cache
+.databricks/
+
+# IDE & OS temporary files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
